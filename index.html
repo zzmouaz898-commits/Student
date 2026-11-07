@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>رفيق | منصة الإرشاد الطلابي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">ر</span><span>رفيق<small>التعلّم معاً أسهل</small></span></a>
+  <nav><button class="nav-link active" data-page="browse">استكشف المرشدين</button><button class="nav-link" data-page="requests">طلباتي</button><button class="nav-link" data-page="offer">قدّم مساعدة</button></nav>
+  <div class="profile"><span class="avatar">م</span><span>محمد أحمد<small>طالب</small></span><span class="chevron">⌄</span></div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><span class="eyebrow">منصة الإرشاد الطلابي</span><h1>كل سؤال إله زميل<br><em>بيعرف جوابه.</em></h1><p>اكتشف طلاباً متميزين بمقرراتك، اطلب المساعدة، وتابع رحلتك التعليمية بمكان واحد.</p>
+  <button class="primary-btn" data-goto="browse">اكتشف المرشدين <span>←</span></button></div>
+  <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="book">✦</div><div class="float-card fc-top">🎓 <span>تعلّم من زملائك</span></div><div class="float-card fc-bottom"><b>+120</b><span>جلسة مساعدة ناجحة</span></div><div class="hero-person">👩🏻‍🎓</div></div>
+</section>
+<section class="stats"><div><b>24</b><span>مرشد متاح</span></div><div><b>12</b><span>مقرر دراسي</span></div><div><b>98%</b><span>رضا الطلاب</span></div><div><b>مجانية</b><span>المساعدة بين الطلاب</span></div></section>
+
+<section id="page-browse" class="page active">
+  <div class="section-heading"><div><span class="eyebrow">ابدأ رحلتك</span><h2>ابحث عن مرشدك</h2><p>اختر المقرر المناسب وشوف مين قادر يساعدك.</p></div><span class="result-count" id="resultCount">4 مرشدين متاحين</span></div>
+  <div class="filters"><label class="searchbox">⌕ <input id="searchInput" placeholder="ابحث عن مقرر أو اسم مرشد..."></label><select id="courseFilter"><option value="">كل المقررات</option><option>قواعد البيانات</option><option>هياكل البيانات</option><option>برمجة الويب</option><option>الرياضيات</option></select><select id="sortFilter"><option value="rating">الأعلى تقييماً</option><option value="name">الاسم</option></select></div>
+  <div class="mentor-grid" id="mentorGrid"></div>
+</section>
+
+<section id="page-requests" class="page">
+  <div class="section-heading"><div><span class="eyebrow">متابعة الطلبات</span><h2>طلباتي</h2><p>تابع حالة طلبات المساعدة وتواصل مع المرشد.</p></div></div>
+  <div id="requestList" class="request-list"></div>
+</section>
+
+<section id="page-offer" class="page">
+  <div class="section-heading"><div><span class="eyebrow">شارك معرفتك</span><h2>قدّم مساعدة لزملائك</h2><p>أضف المقرر والمواضيع والأوقات التي تستطيع فيها المساعدة.</p></div></div>
+  <form id="offerForm" class="form-card">
+    <label>اسمك<input required id="mentorName" placeholder="مثال: محمد أحمد"></label>
+    <label>المقرر<select required id="mentorCourse"><option value="">اختر المقرر</option><option>قواعد البيانات</option><option>هياكل البيانات</option><option>برمجة الويب</option><option>الرياضيات</option></select></label>
+    <label>المواضيع التي تستطيع شرحها<input required id="mentorTopics" placeholder="مثال: SQL، ERD، Normalization"></label>
+    <label>الأوقات المتاحة<input required id="mentorTimes" placeholder="مثال: الأحد والثلاثاء، 4-6 مساءً"></label>
+    <button class="primary-btn" type="submit">نشر عرض المساعدة <span>←</span></button>
+  </form>
+</section>
+
+<section id="page-chat" class="page">
+  <div class="section-heading"><div><span class="eyebrow">تواصل مباشر</span><h2>المحادثة الخاصة</h2><p id="chatSubtitle">اتفق مع زميلك على تفاصيل المساعدة.</p></div></div>
+  <div class="chat-card"><div class="chat-head"><span class="avatar" id="chatAvatar">س</span><div><b id="chatName">سارة الخطيب</b><small>محادثة خاصة بين طالبين</small></div><span class="online-dot"></span></div><div class="messages" id="messages"><div class="day-divider">اليوم</div><div class="bubble received">أهلاً! بأي موضوع حابب نبلّش؟</div><div class="bubble sent">مرحبا، بدي مساعدة بموضوع SQL Joins.</div><div class="bubble received">أكيد، فينا نراجع الأمثلة سوا 😊</div></div><form id="chatForm" class="chat-compose"><input id="chatInput" placeholder="اكتب رسالتك..." required><button aria-label="إرسال">➤</button></form></div>
+</section>
+</main>
+<footer><span class="brand-mark">ر</span><span>رفيق — التعلّم معاً أسهل</span><span>مشروع جامعي تجريبي</span></footer>
+<div class="toast" id="toast"></div>
+<div class="modal-backdrop" id="requestModal"><div class="modal"><button class="close" id="closeModal">×</button><span class="eyebrow">طلب مساعدة جديد</span><h3 id="modalMentor">اطلب المساعدة</h3><p id="modalCourse" class="muted"></p><form id="requestForm"><label>اشرح باختصار شو محتاج مساعدة فيه<textarea id="requestDescription" required rows="4" placeholder="مثال: عندي صعوبة بفهم الربط بين الجداول..."></textarea></label><button class="primary-btn">إرسال الطلب</button></form></div></div>
+<script src="app.js"></script>
+</body></html>
